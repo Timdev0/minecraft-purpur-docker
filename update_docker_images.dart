@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:http/http.dart';
 
 const PURPUR_API = "https://api.purpurmc.org/v2/purpur";
-const DOCKER_TAG_API = "https://registry.hub.docker.com/v2/repositories/josxha/minecraft-purpur/tags?page=";
+const DOCKER_TAG_API = "https://registry.hub.docker.com/v2/repositories/timdev0/minecraft-purpur/tags?page=";
 
 bool DRY_RUN = false;
 bool FORCE_BUILDS = false;
@@ -94,7 +94,7 @@ Future<void> dockerBuildPushRemove(List<String> tags) async {
   tags.forEach((String tag) {
     args.addAll([
       "--tag",
-      "josxha/minecraft-purpur:$tag",
+      "timdev0/minecraft-purpur:$tag",
     ]);
   });
   if (DRY_RUN)
